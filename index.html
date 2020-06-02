@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        input {
+            width: 100%;
+        }
+        
+        .color {
+            width: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form onsubmit="getMyQR();return false;">
+                    <div class="form-group">
+                        <label for="data">Enter the Data:</label>
+                        <input type="text" name="data" id="data" required>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="size1">Width:</label>
+                                <input type="number" name="size1" id="size1" min="10" max="1000" value="100" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="size2">Height:</label>
+                                <input type="number" name="size2" id="size2" min="10" max="1000" value="100" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="favcolor">QR Color:</label>
+                        <input type="color" class="color" id="favcolor" name="favcolor" value="#000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="bgcolor">Background Color:</label>
+                        <input type="color" class="color" id="bgcolor" name="bgcolor" value="#ffffff">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="format">Format</label>
+                        </div>
+                        <select class="custom-select" id="format">
+                            <option value="png" selected>PNG</option>
+                            <option value="gif">GIF</option>
+                            <option value="jpeg">JPEG</option>
+                            <option value="jpg">JPG</option>
+                            <option value="svg">SVG</option>
+                            <option value="eps">EPS</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="submit" value="Generate">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6" id="imgDiv">
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
