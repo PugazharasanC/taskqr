@@ -22,3 +22,4 @@ let getMyQR = async() => {
         myDiv.appendChild(image);
     }
 }
+window.onload = alert('The data should not contain "&" symbol');
